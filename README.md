@@ -41,6 +41,11 @@ The following table describes the props that can be passed to the component for 
 | `arrowsColor`        | String           | The color of the button.                                              |
 | `slideWidth`         | String           | The width of slide.                                                   |
 | `slideHeight`        | String           | The height of slide.                                                  |
+| `mainDivDisplay`     | String           | Choose your display type default flex.                                |
+| `mainDivAlignItems`  | String           | Align items type default center.                                      |
+| `imageWidth`         | String           | The width of image default 100%.                                      |
+| `imageHeight`        | String           | The width of image default 100%.                                      |
+| `objectFitCover`     | String           | Choose your fit default Cover                                         |
 
 
 ### Example
@@ -60,7 +65,13 @@ const carouselImages = [
     backButtonHeight="100px"
     nextButtonWidth="100px"
     nextButtonHeight="100px"
-    arrowsColor="red" >
+    arrowsColor="red" 
+    mainDivDisplay="flex" 
+    mainDivAlignItems="center" 
+    imageWidth="100%" 
+    imageHeight="100%" 
+    objectFitCover="Cover"
+    >
   </Carousel>
 </template>
 

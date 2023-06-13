@@ -10,7 +10,12 @@ export interface Props {
   nextButtonHeight?: string,
   arrowsColor?: string
   slideWidth?: string,
-  slideHeight?: string
+  slideHeight?: string,
+  mainDivDisplay?: string
+  mainDivAlignItems?: string
+  imageWidth?: string
+  imageHeight?: string
+  objectFitCover?: string
 }
 
 const probs = defineProps<Props>()
@@ -32,7 +37,10 @@ function previousSlide(): void {
 </script>
 
 <template>
-  <div class="carousel">
+  <div class="carousel" :style="[{
+    'display': mainDivDisplay || 'flex',
+    'align-items': mainDivAlignItems || 'center'
+  }]">
     <button @click="previousSlide"><Icon 
       icon="ep:arrow-left-bold" 
       :width="backButtonWidth || '48'"
@@ -45,7 +53,12 @@ function previousSlide(): void {
         'height': slideHeight || 'auto',
       }]"
     >
-        <img :src="currentSlide" :key="currentSlide" class="slide" />
+        <img :src="currentSlide" :key="currentSlide" class="slide" :object-fit="objectFitCover || 'cover'"
+        :style="[{
+          'width': imageWidth || '100%',
+          'height': imageHeight || '100%',
+        }]"
+        />
     </div>
     <button @click="nextSlide"><Icon 
       icon="ep:arrow-right-bold" 
